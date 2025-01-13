@@ -6,7 +6,7 @@
 
 
 
-name: Maven Package
+name: Java CI with Maven
 
 on:
     push:
@@ -32,8 +32,9 @@ jobs:
       run: mvn clean install
 
 
-  - uses: mr-smithers-excellent/docker-build-push@v6
-    name: Build & push Docker image
+    - name: Build & push Docker image
+    - uses: mr-smithers-excellent/docker-build-push@v6
+
     with:
       image: kalliopigr/demopublish
       tags: v1, latest
